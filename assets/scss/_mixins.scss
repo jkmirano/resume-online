@@ -1,0 +1,327 @@
+/* Media Queries
+   Device Extra Small Screen maximum
+ */
+ @mixin device-xs() {
+    @media (max-width: $device-xs-max) { @content }
+  }
+  
+  /* Device Small Screen minimum */
+  @mixin device-sm-min() {
+    @media (min-width: $device-xs-min) { @content }
+  }
+  
+  /* Device Small Screen minimum and maximum */
+  @mixin device-sm() {
+    @media (min-width: $device-xs-min) and (max-width: $device-sm-max) { @content }
+  }
+  
+  /* Device Medium Screen minimum */
+  @mixin device-md-min() {
+    @media (min-width: $device-sm-min) { @content }
+  }
+  
+  /* Device Medium Screen minimum and maximum */
+  @mixin device-md() {
+    @media (min-width: $device-sm-min) and (max-width: $device-md-max) { @content }
+  }
+  
+  /* Device Regular Screen minimum */
+  @mixin device-lg-min() {
+    @media (min-width: $device-md-min) { @content }
+  }
+  
+  /* Device Regular Screen minimum and maximum */
+  @mixin device-lg() {
+    @media (min-width: $device-md-min) and (max-width: $device-lg-max) { @content }
+  }
+  
+  /* Device Extra Large Screen minimum */
+  @mixin device-xl-min() {
+    @media (min-width: $device-lg-min) { @content }
+  }
+  
+  /* Box Shadow */
+  @mixin box-shadow($variable) {
+    -webkit-box-shadow: $variable;
+    -moz-box-shadow: $variable;
+    -ms-box-shadow: $variable;
+    -o-box-shadow: $variable;
+    box-shadow: $variable;
+  }
+  
+  /* Box Sizing */
+  @mixin box-sizing($variable) {
+    -webkit-box-sizing: $variable;
+    -moz-box-sizing: $variable;
+    -ms-box-sizing: $variable;
+    -o-box-sizing: $variable;
+    box-sizing: $variable;
+  }
+  
+  /* Transition */
+  @mixin transition($variable) {
+    -webkit-transition: $variable;
+    -moz-transition: $variable;
+    -ms-transition: $variable;
+    -o-transition: $variable;
+    transition: $variable;
+  }
+  
+  // Background
+  @mixin background-size($variable) {
+    -webkit-background-size: $variable;
+    -moz-background-size: $variable;
+    -ms-background-size: $variable;
+    -o-background-size: $variable;
+    background-size: $variable;
+  }
+  
+  // Flexbox display
+  @mixin flexbox() {
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+  }
+  
+  /* The 'flex' shorthand
+     - applies to: flex items
+     <positive-number>, initial, auto, or none
+  */
+  @mixin flex($values) {
+    -webkit-box-flex: $values;
+    -moz-box-flex: $values;
+    -webkit-flex: $values;
+    -ms-flex: $values;
+    flex: $values;
+  }
+  
+  /* Flex Flow Direction
+     - applies to: flex containers
+     row | row-reverse | column | column-reverse
+  */
+  @mixin flex-direction($direction) {
+    -webkit-flex-direction: $direction;
+    -moz-flex-direction: $direction;
+    -ms-flex-direction: $direction;
+    flex-direction: $direction;
+  }
+  
+  /* Flex Line Wrapping
+     - applies to: flex containers
+     nowrap | wrap | wrap-reverse
+  */
+  @mixin flex-wrap($wrap) {
+    -webkit-flex-wrap: $wrap;
+    -moz-flex-wrap: $wrap;
+    -ms-flex-wrap: $wrap;
+    flex-wrap: $wrap;
+  }
+  
+  /* Flex Direction and Wrap
+     - applies to: flex containers
+     <flex-direction> || <flex-wrap>
+  */
+  @mixin flex-flow($flow) {
+    -webkit-flex-flow: $flow;
+    -moz-flex-flow: $flow;
+    -ms-flex-flow: $flow;
+    flex-flow: $flow;
+  }
+  
+  /* Display Order
+     - applies to: flex items
+     <val>, order of the flex item inside the container
+  */
+  @mixin order($val) {
+    -webkit-box-ordinal-group: $val;
+    -moz-box-ordinal-group: $val;
+    -ms-flex-order: $val;
+    -webkit-order: $val;
+    order: $val;
+  }
+  
+  /* Flex grow factor
+     - applies to: flex items
+     <grow>, the size at which the flex item will increase
+  */
+  @mixin flex-grow($grow) {
+    -webkit-flex-grow: $grow;
+    -moz-flex-grow: $grow;
+    -ms-flex-grow: $grow;
+    flex-grow: $grow;
+  }
+  
+  /* Flex shrink
+     - applies to: flex item shrink factor
+     <shrink>, the size at which the flex item will decrease
+  */
+  @mixin flex-shrink($shrink) {
+    -webkit-flex-shrink: $shrink;
+    -moz-flex-shrink: $shrink;
+    -ms-flex-shrink: $shrink;
+    flex-shrink: $shrink;
+  }
+  
+  /* Flex basis
+     - the initial main size of the flex item
+     - applies to: flex items initial main size of the flex item
+     <width>, width of the item within the flex container
+  */
+  @mixin flex-basis($width) {
+    -webkit-flex-basis: $width;
+    -moz-flex-basis: $width;
+    -ms-flex-basis: $width;
+    flex-basis: $width;
+  }
+  
+  /* Axis Alignment
+     - applies to: flex containers
+     flex-start | flex-end | center | space-between | space-around
+     <justify>,
+  */
+  @mixin justify-content($justify) {
+    @if $justify == flex-start {
+      -webkit-box-pack: start;
+      -moz-box-pack: start;
+      -ms-flex-pack: start;
+    } @else if $justify == flex-end {
+      -webkit-box-pack: end;
+      -moz-box-pack: end;
+      -ms-flex-pack: end;
+    } @else if $justify == space-between {
+      -webkit-box-pack: justify;
+      -moz-box-pack: justify;
+      -ms-flex-pack: justify;
+    } @else if $justify == space-around {
+      -ms-flex-pack: distribute;
+    } @else {
+      -webkit-box-pack: $justify;
+      -moz-box-pack: $justify;
+      -ms-flex-pack: $justify;
+    }
+    -webkit-justify-content: $justify;
+    justify-content: $justify;
+    -ms-flex-pack: $justify;
+  }
+  
+  /* Packing Flex Lines
+     - applies to: multi-line flex containers
+     flex-start | flex-end | center | space-between | space-around | stretch
+     <align>, the alignment of the items within a flex container
+   */
+  @mixin align-content($align) {
+    @if $align == flex-start {
+      -ms-flex-line-pack: start;
+    } @else if $align == flex-end {
+      -ms-flex-line-pack: end;
+    } @else {
+      -ms-flex-line-pack: $align;
+    }
+    -webkit-align-content: $align;
+    align-content: $align;
+  }
+  
+  /* Cross-axis Alignment
+     - applies to: flex containers
+     flex-start | flex-end | center | baseline | stretch
+     <align>,
+  */
+  @mixin align-items($align) {
+    @if $align == flex-start {
+      -webkit-box-align: start;
+      -moz-box-align: start;
+      -ms-flex-align: start;
+    } @else if $align == flex-end {
+      -webkit-box-align: end;
+      -moz-box-align: end;
+      -ms-flex-align: end;
+    } @else {
+      -webkit-box-align: $align;
+      -moz-box-align: $align;
+      -ms-flex-align: $align;
+    }
+    -webkit-align-items: $align;
+    -ms-flex-align: $align;
+    align-items: $align;
+  }
+  
+  /* Cross-axis Alignment
+     - applies to: flex items
+     auto | flex-start | flex-end | center | baseline | stretch
+     For IE: Use 'start' or 'end' instead.
+     <align>, the alignment of the items within a flex container.
+   */
+  @mixin align-self($align) {
+    @if $align == flex-start {
+      -ms-flex-item-align: start;
+    } @else if $align == flex-end {
+      -ms-flex-item-align: end;
+    } @else {
+      -ms-flex-item-align: $align;
+    }
+    -webkit-align-self: $align;
+    -moz-align-self: $align;
+    align-self: $align;
+  }
+  
+  /* Filter */
+  @mixin filter-grayscale($variable) {
+    -webkit-filter: #{"grayscale(#{$variable})"};
+    -moz-filter: #{"grayscale(#{$variable})"};
+    -ms-filter: #{"grayscale(#{$variable})"};
+    -o-filter: #{"grayscale(#{$variable})"};
+    filter: #{"grayscale(#{$variable})"};
+  }
+  
+  /* Browser Prefixes */
+  @mixin transform($transforms) {
+    -webkit-transform: $transforms;
+    -moz-transform: $transforms;
+    -ms-transform: $transforms;
+    transform: $transforms;
+  }
+  
+  /* Rotate */
+  @mixin rotate ($deg) {
+    @include transform(rotate(#{$deg}deg));
+  }
+  
+  /* Scale */
+  @mixin scale($scale) {
+    @include transform(scale($scale));
+  }
+  
+  /* Translate */
+  @mixin translate ($x, $y) {
+    @include transform(translate($x, $y));
+  }
+  
+  /* Skew */
+  @mixin skew ($x, $y) {
+    @include transform(skew(#{$x}deg, #{$y}deg));
+  }
+  
+  /* Transform Origin */
+  @mixin transform-origin ($origin) {
+    -webkit-transform-origin: $origin;
+    -moz-transform-origin: $origin;
+    -ms-transform-origin: $origin;
+    transform-origin: $origin;
+  }
+  
+  /* Appearance */
+  @mixin apperance($value) {
+    -webkit-appearance: $value;
+    -moz-appearance: $value;
+    appearance: $value;
+  }
+  
+  @mixin clearfix() {
+    &::after {
+      display: block;
+      content: "";
+      clear: both;
+    }
+  }
